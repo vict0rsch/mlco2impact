@@ -1,0 +1,64 @@
+.compute-section {
+    min-height: 100vh;
+    padding-top: 10rem;
+    background: linear-gradient(to bottom, #{fade-out($black,0)} 2%, #{fade-out($black, .5)} 75%, $black 100%),
+    url('../img/abandoned-computer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+    p {
+        margin-bottom: 3rem;
+    }
+
+    #compute-form {
+        color: white;
+        margin-bottom: 2.5rem;
+
+        label {
+            margin: 0;
+        }
+
+        #compute-selects-row{
+          justify-content: space-evenly;
+          margin-bottom: 3rem;
+        }
+    }
+
+    #result-card {
+
+        margin: auto;
+        background-color: $white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+
+        .result-value {
+            font-size: 3rem;
+        }
+
+        #result-unit {
+            font-size: 1rem;
+            color: $gray-700;
+        }
+
+        .result-box {}
+
+        #result-emitted {
+            #emitted-unit {}
+
+            #emitted-value {
+                color: orange;
+            }
+        }
+
+        #result-offset {
+            #offset-unit {}
+
+            #offset-value {
+                color: green
+            }
+        }
+    }
+}
