@@ -82,12 +82,12 @@
         <div class="form-row" id="compute-selects-row">
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-hours">GPU hours</label>
-            <input class="form-control" id="compute-hours" type="number" value="3" />
+            <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
           </div>
 
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-region">Region of compute</label>
-            <select class="form-control" id="compute-region">
+            <select class="form-control compute-input" id="compute-region">
               <option>US-East</option>
               <option>US-West</option>
               <option>Europe-London</option>
@@ -97,7 +97,7 @@
 
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-gpu">GPU type</label>
-            <select class="form-control" id="compute-gpu">
+            <select class="form-control compute-input" id="compute-gpu">
               <option>K-80</option>
               <option>Tesla v100</option>
               <option>Tesla p100</option>
@@ -106,7 +106,7 @@
 
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-provider">Provider</label>
-            <select class="form-control" id="compute-provider">
+            <select class="form-control compute-input" id="compute-provider">
               <option>Microsoft Azure</option>
               <option>Google Cloud Compute</option>
               <option>Amazon Web Services</option>

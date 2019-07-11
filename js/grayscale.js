@@ -1,3 +1,9 @@
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 (function ($) {
   "use strict"; // Start of use strict
 
@@ -47,12 +53,6 @@
     const provider = $("#compute-provider option:selected").text();
     const region = $("#compute-region option:selected").text();
     const hours = parseInt($("#compute-hours").val(), 10);
-
-    if (hours <= 0 || hours > 1e6) {
-      fail("Wrong GPU-hours value: " + hours);
-      return null
-    }
-
     return {
       gpu, provider, region, hours
     }
@@ -66,12 +66,19 @@
 
   const checkForm = () => {
     const values = getValues();
-    console.log({ values });
+    const { gpu, provider, region, hours } = values;
+    // console.log({ values });
+
+    if (!Number.isInteger(hours) || hours <= 0 || hours > 1e6) {
+      fail("Wrong GPU-hours value: " + hours);
+      return null
+    }
 
     return values;
   }
 
   const submitCompute = () => {
+    $("#result-card").hide();
     $(".spinner-border").show()
     const values = checkForm();
 
@@ -82,7 +89,7 @@
     setTimeout(() => {
       $(".spinner-border").hide()
       $("#result-card").fadeIn();
-    }, 800
+    }, getRandomInt(500, 1200)
     )
   }
 
@@ -92,6 +99,8 @@
     submitCompute();
     return false;
   })
+
+  $(".compute-input").change(checkForm)
 
 
 
