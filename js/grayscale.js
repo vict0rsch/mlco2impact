@@ -52,6 +52,7 @@ function sc(id) {
         $('html, body').animate({
           scrollTop: (target.offset().top - 70)
         }, 1000, "easeInOutExpo");
+        window.history.pushState('', '', "/" + this.hash);
         return false;
       }
     }
@@ -67,6 +68,10 @@ function sc(id) {
     target: '#mainNav',
     offset: 100
   });
+
+  $("#navbarResponsive a").on('activate', function() {
+    console.log($(this));
+ });
 
   // Collapse Navbar
   var navbarCollapse = function () {

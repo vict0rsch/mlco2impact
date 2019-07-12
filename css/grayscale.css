@@ -12,8 +12,8 @@
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #64a19d;
-  border: 1px solid #64a19d;
+  color: #f55249;
+  border: 1px solid #f55249;
 }
 
 #mainNav .navbar-toggler:focus {
@@ -63,26 +63,26 @@
     color: white;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: #0c1f37;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #161616;
+    color: #f55249;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #161616;
+    color: #fff;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #64a19d;
+    color: #f55249;
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: #467370;
+    color: #e5180d;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #64a19d;
+    color: #f55249;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid #f55249;
   }
 }
 
@@ -93,9 +93,8 @@
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.6)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/bg-masthead.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.6) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg-masthead.jpg");
-  background-position: center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(12, 31, 55, 0.9)), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(12, 31, 55, 0.9) 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/bg-masthead.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -150,54 +149,54 @@
 }
 
 .btn-primary {
-  background-color: #64a19d;
+  background-color: #f55249;
 }
 
 .btn-primary:hover {
-  background-color: #4f837f;
+  background-color: #f22419;
 }
 
 .btn-primary:focus {
-  background-color: #4f837f;
+  background-color: #f22419;
   color: white;
 }
 
 .btn-primary:disabled {
-  background-color: #4f837f;
+  background-color: #f22419;
   color: white;
 }
 
 .btn-primary:active {
-  background-color: #467370 !important;
+  background-color: #e5180d !important;
 }
 
 .btn-secondary {
-  background-color: #40615f;
+  background-color: #c7c8c8;
 }
 
 .btn-secondary:hover {
-  background-color: #2c4241;
+  background-color: #adafaf;
 }
 
 .btn-secondary:focus {
-  background-color: #2c4241;
+  background-color: #adafaf;
   color: white;
 }
 
 .btn-secondary:disabled {
-  background-color: #2c4241;
+  background-color: #adafaf;
   color: white;
 }
 
 .btn-secondary:active {
-  background-color: #223332 !important;
+  background-color: #a0a2a2 !important;
 }
 
 .compute-section {
   min-height: 100vh;
   padding-top: 10rem;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #161616), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/abandoned-computer.jpg");
-  background: linear-gradient(to bottom, #161616 2%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/abandoned-computer.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("../img/abandoned-computer.jpg");
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("../img/abandoned-computer.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -256,7 +255,7 @@
   margin: auto;
   background-color: #fff;
   border-radius: 5px;
-  border-bottom: 5px solid #64a19d;
+  border-bottom: 5px solid #f55249;
   padding: 2rem;
   -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
@@ -281,8 +280,8 @@
 }
 
 .learn-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #161616), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/RoundLake-min.jpg");
-  background: linear-gradient(to bottom, #161616 2%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/RoundLake-min.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("../img/Lake-Tahoe-Scenic.jpg");
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("../img/Lake-Tahoe-Scenic.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -298,7 +297,7 @@
 @media (min-width: 992px) {
   .learn-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    border-left: 0.5rem solid #f55249;
   }
 }
 
@@ -312,7 +311,7 @@
     padding: 5rem;
   }
   .learn-section .learn-text hr {
-    border-color: #64a19d;
+    border-color: #f55249;
     border-width: .25rem;
     width: 30%;
   }
@@ -320,8 +319,8 @@
 
 .act-section {
   padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #161616), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/100_0221-min.jpg");
-  background: linear-gradient(to bottom, #161616 2%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/100_0221-min.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/100_0221-min.jpg");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/100_0221-min.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -350,7 +349,7 @@
 
 .contact-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #64a19d;
+  border-bottom: 0.25rem solid #f55249;
 }
 
 .contact-section .card h4 {
@@ -361,7 +360,7 @@
 }
 
 .contact-section .card hr {
-  border-color: #64a19d;
+  border-color: #f55249;
   border-width: 0.25rem;
   width: 3rem;
 }
@@ -388,18 +387,32 @@
   color: #fff;
 }
 
+.about-section {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37));
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 10rem 0;
+}
+
+html {
+  background: #c7c8c8;
+}
+
 body {
   font-family: 'Open Sans';
   letter-spacing: 0.0625em;
 }
 
 a {
-  color: #64a19d;
+  color: #f55249;
 }
 
 a:focus, a:hover {
   text-decoration: none;
-  color: #3c6360;
+  color: #cd150b;
 }
 
 .bg-black {
@@ -407,11 +420,11 @@ a:focus, a:hover {
 }
 
 .bg-primary {
-  background-color: #64a19d !important;
+  background-color: #f55249 !important;
 }
 
 .text-primary {
-  color: #64a19d !important;
+  color: #f55249 !important;
 }
 
 footer {
@@ -432,7 +445,7 @@ footer {
 }
 
 footer {
-  background-color: #40615f;
+  background-color: #c7c8c8;
 }
 
 .text-white-80 {

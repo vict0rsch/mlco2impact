@@ -1,7 +1,7 @@
 .compute-section {
     min-height: 100vh;
     padding-top: 10rem;
-    background: linear-gradient(to bottom, #{fade-out($black,0)} 2%, #{fade-out($black, .5)} 75%, $black 100%),
+    background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
     url('../img/abandoned-computer.jpg');
     background-position: center;
     background-repeat: no-repeat;

@@ -9,6 +9,10 @@
 @import 'contact.scss';
 @import 'about.scss';
 
+html{
+  background: $secondary;
+}
+
 body {
     font-family: 'Open Sans';
     letter-spacing: 0.0625em;

@@ -13,6 +13,8 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -97,6 +99,20 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+function html() {
+  return gulp.src([
+    'html/head.html',
+    'html/home.html',
+    'html/compute.html',
+    'html/act.html',
+    'html/learn.html',
+    'html/about.html',
+    'html/foot.html',
+  ])
+    .pipe(concat('index.html'))
+    .pipe(gulp.dest('./'));
+}
+
 // JS task
 function js() {
   return gulp
@@ -122,12 +138,15 @@ function js() {
 function watchFiles() {
   gulp.watch("./scss/**/*", css);
   gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
-  gulp.watch("./**/*.html", browserSyncReload);
+  gulp.watch("./html/*.html", (done) => {
+    browserSyncReload(done);
+    html();
+  });
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const build = gulp.series(vendor, gulp.parallel(css, js, html));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
