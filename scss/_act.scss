@@ -1,0 +1,21 @@
+.act-section {
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, #{fade-out($black,0)} 2%, #{fade-out($black, .5)} 75%, $black 100%),
+    url('../img/100_0221-min.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    min-height: 100vh;
+
+    #learn-more-div {
+        padding: 5rem;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.5rem;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+}

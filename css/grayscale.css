@@ -143,7 +143,6 @@
   -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
-  font-family: 'Open Sans';
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: .15rem;
@@ -163,8 +162,35 @@
   color: white;
 }
 
+.btn-primary:disabled {
+  background-color: #4f837f;
+  color: white;
+}
+
 .btn-primary:active {
   background-color: #467370 !important;
+}
+
+.btn-secondary {
+  background-color: #40615f;
+}
+
+.btn-secondary:hover {
+  background-color: #2c4241;
+}
+
+.btn-secondary:focus {
+  background-color: #2c4241;
+  color: white;
+}
+
+.btn-secondary:disabled {
+  background-color: #2c4241;
+  color: white;
+}
+
+.btn-secondary:active {
+  background-color: #223332 !important;
 }
 
 .compute-section {
@@ -178,8 +204,36 @@
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .compute-section {
+    padding-top: 3rem;
+  }
+}
+
 .compute-section p {
   margin-bottom: 3rem;
+}
+
+.compute-section #results-more {
+  position: absolute;
+  max-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  right: -50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.compute-section #compute-container {
+  height: 100%;
+  height: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
 }
 
 .compute-section #compute-form {
@@ -198,83 +252,96 @@
   margin-bottom: 3rem;
 }
 
-.compute-section #result-card {
+.compute-section #result-row #result-card {
   margin: auto;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 5px;
+  border-bottom: 5px solid #64a19d;
   padding: 2rem;
   -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.compute-section #result-card .result-value {
+.compute-section #result-row #result-card .result-value {
   font-size: 3rem;
+  font-weight: 200;
 }
 
-.compute-section #result-card #result-unit {
+.compute-section #result-row #result-card #result-unit {
   font-size: 1rem;
   color: #495057;
 }
 
-.compute-section #result-card #result-emitted #emitted-value {
+.compute-section #result-row #result-card #result-emitted #emitted-value {
   color: orange;
 }
 
-.compute-section #result-card #result-offset #offset-value {
+.compute-section #result-row #result-card #result-offset #offset-value {
   color: green;
 }
 
-.projects-section {
+.learn-section {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #161616), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/RoundLake-min.jpg");
+  background: linear-gradient(to bottom, #161616 2%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/RoundLake-min.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
   padding: 10rem 0;
+  text-align: center;
 }
 
-.projects-section .featured-text {
+.learn-section .featured-text {
   padding: 2rem;
 }
 
 @media (min-width: 992px) {
-  .projects-section .featured-text {
+  .learn-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
 }
 
-.projects-section .project-text {
+.learn-section .learn-text {
   padding: 3rem;
   font-size: 90%;
 }
 
 @media (min-width: 992px) {
-  .projects-section .project-text {
+  .learn-section .learn-text {
     padding: 5rem;
   }
-  .projects-section .project-text hr {
+  .learn-section .learn-text hr {
     border-color: #64a19d;
     border-width: .25rem;
     width: 30%;
   }
 }
 
-.signup-section {
+.act-section {
   padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-signup.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #161616), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/100_0221-min.jpg");
+  background: linear-gradient(to bottom, #161616 2%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/100_0221-min.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  min-height: 100vh;
 }
 
-.signup-section .form-inline input {
-  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  height: auto;
-  font-family: 'Open Sans';
-  font-size: 80%;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  border: 0;
+.act-section #learn-more-div {
+  padding: 5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.5rem;
+}
+
+.act-section #learn-more-div i {
+  font-size: 1.5rem;
 }
 
 .contact-section {
@@ -349,4 +416,25 @@ a:focus, a:hover {
 
 footer {
   padding: 5rem 0;
+}
+
+.form-inline input, .form-inline textarea {
+  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  height: auto;
+  font-family: 'Open Sans';
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+  width: 100% !important;
+}
+
+footer {
+  background-color: #40615f;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8) !important;
 }

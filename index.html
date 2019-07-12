@@ -30,7 +30,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">ML CO2 Impact</a>
+      <a class="navbar-brand js-scroll-trigger" href="/">ML CO2 Impact</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -40,13 +40,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#compute">Compute</a>
+            <a id="compute-nav-link" class="nav-link js-scroll-trigger" href="#compute">Compute</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+            <a class="nav-link js-scroll-trigger" href="#act">Act</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
         </ul>
       </div>
@@ -66,51 +69,42 @@
 
   <!-- Compute Section -->
   <section id="compute" class="compute-section text-center">
-    <div class="container">
+    <div id="compute-container" class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
-          <p class="text-white-50">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right
+          <p class="text-white-80">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right
             now, simply download the template on
             <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open
             source, and you can use it for any purpose, personal or commercial.</p>
         </div>
 
       </div>
+
       <form id="compute-form">
 
         <div class="form-row" id="compute-selects-row">
+
+          <div class="form-group col-md-4 col-lg-3 col-xl-2">
+            <label for="compute-gpu">GPU type</label>
+            <select class="form-control compute-input" id="compute-gpu">
+            </select>
+          </div>
+
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-hours">GPU hours</label>
             <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
           </div>
 
           <div class="form-group col-md-4 col-lg-3 col-xl-2">
-            <label for="compute-region">Region of compute</label>
-            <select class="form-control compute-input" id="compute-region">
-              <option>US-East</option>
-              <option>US-West</option>
-              <option>Europe-London</option>
-              <option>Asia-Beijing</option>
-            </select>
-          </div>
-
-          <div class="form-group col-md-4 col-lg-3 col-xl-2">
-            <label for="compute-gpu">GPU type</label>
-            <select class="form-control compute-input" id="compute-gpu">
-              <option>K-80</option>
-              <option>Tesla v100</option>
-              <option>Tesla p100</option>
-            </select>
-          </div>
-
-          <div class="form-group col-md-4 col-lg-3 col-xl-2">
             <label for="compute-provider">Provider</label>
             <select class="form-control compute-input" id="compute-provider">
-              <option>Microsoft Azure</option>
-              <option>Google Cloud Compute</option>
-              <option>Amazon Web Services</option>
-              <option>Self-Hosted</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-4 col-lg-3 col-xl-2">
+            <label for="compute-region">Region of compute</label>
+            <select class="form-control compute-input" id="compute-region">
             </select>
           </div>
 
@@ -118,7 +112,7 @@
 
         <div class="form-row">
           <div class="form-group col-md-12">
-            <button class="btn btn-primary" type="submit">Compute</button>
+            <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
           </div>
         </div>
 
@@ -128,20 +122,24 @@
         <span class="sr-only">Loading...</span>
       </div>
 
-      <div class="row">
+      <a id="goToResults" href="#compute-submit" class="js-scroll-trigger"></a>
 
-        <div style="display:none;" id="result-card" class="col-md-8">
+      <div class="row" id="result-row">
+
+        <div style="display:none;" id="result-card" class="col-md-6 col-8">
 
           <div class="row">
+            <a href="#act" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">What can I do?</a>
             <div class="col-md-6 result-box" id="result-emitted">
-              <div class="result-title">Emitted Carbon</div>
+              <div class="result-title small text-uppercase text-black-50">Emitted Carbon</div>
               <div id="emitted-value" class="result-value">219</div>
             </div>
             <div class="col-md-6 result-box" id="result-offset">
-              <div class="result-title">Offset Carbon</div>
+              <div class="result-title small text-uppercase text-black-50">Offset Carbon</div>
               <div id="offset-value" class="result-value">219</div>
             </div>
-            <div class="col-md-12" id="result-unit"> kg Eq. Co2</div>
+            <div class="col-md-12 small text-black-50" id="result-unit"> kg eq. CO2 <a href="#co2eq"
+                class="js-scroll-trigger"><i class="fas fa-question-circle"></i></a></div>
           </div>
 
         </div>
@@ -151,35 +149,105 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section bg-light">
+  <!-- Act Section -->
+  <section id="act" class="act-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+          <i class="far fa-compass fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">There are things you can do</h2>
+
+        </div>
+      </div>
+    </div>
+
     <div class="container">
 
-      <!-- Featured Project Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-xl-8 col-lg-7">
-          <img class="img-fluid mb-3 mb-lg-0" src="img/bg-masthead.jpg" alt="">
+      <div class="row">
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+              <h6 class="text-uppercase m-0">Chose your provider</h6>
+              <hr class="my-4">
+              <div class="small text-black-50">nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn nfzkefnjk jef
+                qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn
+                nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn </div>
+            </div>
+          </div>
         </div>
-        <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
-            <h4>Shoreline</h4>
-            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any
-              project - even commercial projects! Download it, customize it, and publish your website!</p>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-envelope text-primary mb-2"></i>
+              <h6 class="text-uppercase m-0">Chose your region</h6>
+              <hr class="my-4">
+              <div class="small text-black-50">
+                <a href="#">f nqf zne fjnsjg nwjf nqnfqjfeqk, N fjfjenqf jk nfj qnjknoizaiepo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-mobile-alt text-primary mb-2"></i>
+              <h6 class="text-uppercase m-0">Answer our poll</h6>
+              <hr class="my-4">
+              <div class="small text-black-50">+1 (555) 902-8832</div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="row" id="learn-more-div">
+
+        <a href="#learn" class="btn btn-primary js-scroll-trigger">Learn more<i>⤵</i></a>
+
+      </div>
+      <!-- 
+        <div class="social d-flex justify-content-center">
+          <a href="#" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </div> -->
+
+    </div>
+  </section>
+
+  <!-- Learn Section -->
+  <section id="learn" class="learn-section bg-light">
+    <div class="container">
+
+      <div id="learn-title" class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">Learn</h2>
+          <p class="text-white-80">This section will present some of the important concepts to better understand
+            the carbon footprint of your computations, including what providers do to offset it</p>
+        </div>
+
+      </div>
 
       <!-- Project One Row -->
-      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+      <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
         <!-- <div class="col-lg-6">
           <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
         </div> -->
         <div class="col-lg-12">
-          <div class="bg-black text-center h-100 project">
+          <div class="text-center h-100 project">
             <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
+              <div class="learn-text w-100 my-auto text-center text-lg-left">
                 <h4 class="text-white">Misty</h4>
-                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else,
+                <p class="mb-0 text-white-80">An example of where you can put an image of a project, or anything else,
                   along with a description.</p>
                 <hr class="d-none d-lg-block mb-0 ml-0">
               </div>
@@ -194,11 +262,11 @@
           <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
         </div> -->
         <div class="col-lg-12 order-lg-first">
-          <div class="bg-black text-center h-100 project">
+          <div class="text-center h-100 project">
             <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-right">
+              <div class="learn-text w-100 my-auto text-center text-lg-right">
                 <h4 class="text-white">Mountains</h4>
-                <p class="mb-0 text-white-50">Another example of a project with its respective description. These
+                <p class="mb-0 text-white-80">Another example of a project with its respective description. These
                   sections work well responsively as well, try this theme on a small screen!</p>
                 <hr class="d-none d-lg-block mb-0 mr-0">
               </div>
@@ -210,88 +278,42 @@
     </div>
   </section>
 
-  <!-- Signup Section -->
-  <section id="signup" class="signup-section">
+  <!-- About Section -->
+  <section id="about" class="about-section bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
 
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
-          <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
-              placeholder="Enter email address...">
-            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-          </form>
 
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact-section bg-black">
-    <div class="container">
 
-      <div class="row">
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Address</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="#">hello@yourdomain.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">+1 (555) 902-8832</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="social d-flex justify-content-center">
-        <a href="#" class="mx-2">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-
-    </div>
-  </section>
 
   <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
+  <footer class="small text-center text-white-80">
     <div class="container">
-      Copyright &copy; Your Website 2019
+
+      <form class="row form-inline d-flex">
+
+        <div class="col-md-6 col-12">
+          <textarea rows="5" required type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+            id="inputEmail" placeholder="Can something be improved?"></textarea>
+        </div>
+        <div class="col-md-4 col-12">
+          <input type="email" required class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+            placeholder="Enter email address...">
+        </div>
+
+        <div class="col-md-2 col-12">
+          <button type="submit" class="btn btn-primary mx-auto">Send</button>
+        </div>
+      </form>
     </div>
+    </div>
+
+    <!-- <div id= class="container">
+      Copyright &copy; Your Website 2019
+    </div> -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
