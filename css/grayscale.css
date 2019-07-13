@@ -91,13 +91,19 @@
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 35rem;
+  min-height: 100vh;
   padding: 15rem 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(12, 31, 55, 0.9)), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/bg-masthead.jpg");
   background: linear-gradient(to bottom, rgba(12, 31, 55, 0.9) 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/bg-masthead.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    padding-top: 10rem;
+  }
 }
 
 .masthead h1 {
@@ -206,6 +212,7 @@
 @media (max-width: 768px) {
   .compute-section {
     padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -227,12 +234,12 @@
 }
 
 .compute-section #compute-container {
-  height: 100%;
-  height: -moz-available;
+  min-height: 100%;
+  min-height: -moz-available;
   /* WebKit-based browsers will ignore this. */
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   /* Mozilla-based browsers will ignore this. */
-  height: fill-available;
+  min-height: fill-available;
 }
 
 .compute-section #compute-form {
@@ -290,6 +297,13 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .learn-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
 .learn-section .featured-text {
   padding: 2rem;
 }
@@ -326,6 +340,13 @@
   background-attachment: scroll;
   background-size: cover;
   min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .act-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }
 
 .act-section #learn-more-div {
@@ -388,13 +409,20 @@
 }
 
 .about-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37));
-  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c));
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
   padding: 10rem 0;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }
 
 html {

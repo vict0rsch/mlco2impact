@@ -1,6 +1,6 @@
 .learn-section {
     background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
-    url('../img/Lake-Tahoe-Scenic.jpg');
+        url('../img/Lake-Tahoe-Scenic.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -8,6 +8,12 @@
     padding: 10rem 0;
 
     text-align: center;
+
+    @media(max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
 
     .featured-text {
         padding: 2rem;

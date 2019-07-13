@@ -3,12 +3,17 @@
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 35rem;
+    min-height: 100vh;
     padding: 15rem 0;
     background: linear-gradient(to bottom, $back-1 0, $back-2 75%, $back-25 100%), url("../img/bg-masthead.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+
+    @media(max-width: 768px) {
+        padding-top: 10rem;
+    }
+
 
     h1 {
         font-family: 'Open Sans';

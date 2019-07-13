@@ -7,6 +7,12 @@
     background-size: cover;
     min-height: 100vh;
 
+    @media(max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+
     #learn-more-div {
         padding: 5rem;
         justify-content: center;
