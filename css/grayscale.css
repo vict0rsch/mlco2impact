@@ -258,6 +258,12 @@
   margin-bottom: 3rem;
 }
 
+@media (max-width: 768px) {
+  .compute-section #compute-form #compute-selects-row {
+    padding: 0 2rem;
+  }
+}
+
 .compute-section #result-row #result-card {
   margin: auto;
   background-color: #fff;
@@ -346,6 +352,16 @@
   .act-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+}
+
+.act-section #learn-card-container {
+  padding: 2.5em;
+}
+
+@media (max-width: 768px) {
+  .act-section #learn-card-container {
+    padding: 1rem;
   }
 }
 

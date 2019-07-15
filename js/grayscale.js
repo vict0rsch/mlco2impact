@@ -52,7 +52,9 @@ function sc(id) {
         $('html, body').animate({
           scrollTop: (target.offset().top - 70)
         }, 1000, "easeInOutExpo");
-        window.history.pushState('', '', "/" + this.hash);
+        let w = window.location.pathname;
+        if (w[w.length - 1] !== "/") w += "/"
+        window.history.pushState('', '', w + this.hash);
         return false;
       }
     }
@@ -69,9 +71,9 @@ function sc(id) {
     offset: 100
   });
 
-  $("#navbarResponsive a").on('activate', function() {
+  $("#navbarResponsive a").on('activate', function () {
     console.log($(this));
- });
+  });
 
   // Collapse Navbar
   var navbarCollapse = function () {
@@ -202,7 +204,7 @@ function sc(id) {
     setTimeout(() => {
       $(".spinner-border").hide()
       $("#result-card").fadeIn();
-      if ($(window).width() < 769){
+      if ($(window).width() < 769) {
         $("#goToResults").trigger("click");
       }
     }, getRandomInt(500, 1200)

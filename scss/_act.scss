@@ -12,6 +12,15 @@
         padding-bottom: 3rem;
     }
 
+    #learn-card-container {
+        padding: 2.5em;
+
+        @media(max-width: 768px) {
+            padding: 1rem;
+        }
+
+    }
+
 
     #learn-more-div {
         padding: 5rem;
